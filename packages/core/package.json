@@ -1,0 +1,23 @@
+{
+  "name": "@nghmr/core",
+  "version": "0.1.0",
+  "description": "ng HMR core concept.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/bornkiller/nghmr.git"
+  },
+  "keywords": [
+    "HMR",
+    "angular"
+  ],
+  "author": "bornkiller <hjj491229492@hotmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bornkiller/nghmr/issues"
+  },
+  "homepage": "https://github.com/bornkiller/nghmr#readme"
+}
