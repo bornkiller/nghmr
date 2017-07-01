@@ -1,4 +1,7 @@
 {
+  "roots": [
+    "<rootDir>/packages/core"
+  ],
   "moduleFileExtensions": ["js", "json", "ts"],
   "moduleDirectories": ["node_modules"],
   "moduleNameMapper": {
@@ -8,4 +11,10 @@
   "collectCoverageFrom": ["src/**/*.js"],
   "coverageDirectory": "coverage",
   "coverageReporters": ["lcov", "html"]
+  // Test configuration
+  testMatch: ["**/__tests__/**/*.spec.js"],
+  testPathIgnorePatterns: [
+    "/node_modules/",
+    "/dist/"
+  ]
 }

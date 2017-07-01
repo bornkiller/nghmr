@@ -3,8 +3,7 @@
  * @author - huang.jian <hjj491229492@hotmail.com>
  */
 
-import isObject from 'lodash-es/isObject';
-import isUndefined from 'lodash-es/isUndefined';
+import { isObject, isUndefined } from 'lodash';
 
 /**
  * @description - angular module replacement
@@ -41,63 +40,63 @@ export class CocoModule {
   }
 
   value() {
-    this.InvokeQueue.push(['$provide', 'value', arguments]);
+    this.InvokeQueue.push(['$provide', 'value', Array.from(arguments)]);
     return this;
   }
 
   constant() {
-    this.InvokeQueue.unshift(['$provide', 'constant', arguments]);
+    this.InvokeQueue.unshift(['$provide', 'constant', Array.from(arguments)]);
     return this;
   }
 
   provider() {
-    this.InvokeQueue.push(['$provide', 'provider', arguments]);
+    this.InvokeQueue.push(['$provide', 'provider', Array.from(arguments)]);
     return this;
   }
 
   factory() {
-    this.InvokeQueue.push(['$provide', 'factory', arguments]);
+    this.InvokeQueue.push(['$provide', 'factory', Array.from(arguments)]);
     return this;
   }
 
   service() {
-    this.InvokeQueue.push(['$provide', 'service', arguments]);
+    this.InvokeQueue.push(['$provide', 'service', Array.from(arguments)]);
     return this;
   }
 
   decorator() {
-    this.ConfigQueue.push(['$provide', 'decorator', arguments]);
+    this.ConfigQueue.push(['$provide', 'decorator', Array.from(arguments)]);
     return this;
   }
 
   animation() {
-    this.InvokeQueue.push('$animateProvider', 'register', arguments);
+    this.InvokeQueue.push(['$animateProvider', 'register', Array.from(arguments)]);
     return this;
   }
 
   filter() {
-    this.InvokeQueue.push('$filterProvider', 'register', arguments);
+    this.InvokeQueue.push(['$filterProvider', 'register', Array.from(arguments)]);
     return this;
   }
 
   controller() {
-    this.InvokeQueue.push('$controllerProvider', 'register', arguments);
+    this.InvokeQueue.push(['$controllerProvider', 'register', Array.from(arguments)]);
     return this;
   }
 
   directive() {
-    this.InvokeQueue.push('$compileProvider', 'directive', arguments);
+    this.InvokeQueue.push(['$compileProvider', 'directive', Array.from(arguments)]);
     return this;
   }
 
   component() {
-    this.InvokeQueue.push('$controllerProvider', 'component', arguments);
+    this.InvokeQueue.push(['$compileProvider', 'component', Array.from(arguments)]);
     return this;
   }
 
   config() {
     // Update ConfigQueue
-    this.ConfigQueue.push('$injector', 'invoke', arguments);
+    this.ConfigQueue.push(['$injector', 'invoke', Array.from(arguments)]);
     return this;
   }
 
