@@ -8,12 +8,14 @@ const eslint = require('rollup-plugin-eslint');
 const resolve = require('rollup-plugin-node-resolve');
 
 module.exports = {
-  entry: 'index.js',
+  entry: 'src/index.js',
+  moduleName: 'coco',
   plugins: [
     eslint({
       include: ['*.js']
     }),
     resolve({
+      module: true,
       jsnext: true,
       modulesOnly: true
     }),
@@ -22,6 +24,7 @@ module.exports = {
     })
   ],
   targets: [
-    { format: 'cjs', dest: 'dist/core.common.js' }
+    { format: 'cjs', dest: 'dist/core.common.js' },
+    { format: 'iife', dest: 'dist/core.iife.js' }
   ]
 };

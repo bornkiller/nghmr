@@ -1,7 +1,7 @@
 module.exports = {
-  roots: [
-    '<rootDir>/packages/core'
-  ],
+  // roots: [
+  //   '<rootDir>/packages/core'
+  // ],
   moduleFileExtensions: ['js', 'json', 'ts'],
   moduleDirectories: ['node_modules'],
   moduleNameMapper: {

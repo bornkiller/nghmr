@@ -3,7 +3,7 @@
  * @author - huang.jian <hjj491229492@hotmail.com>
  */
 
-import { isObject, isUndefined } from 'lodash';
+import { isObject, isUndefined } from 'lodash-es';
 
 /**
  * @description - angular module replacement

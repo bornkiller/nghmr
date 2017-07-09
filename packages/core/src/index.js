@@ -40,7 +40,9 @@ function module(name, requires, configFn) {
 /**
  * @description - angular.bootstrap replacement
  */
-function bootstrap() {}
+function bootstrap(element, modules, config) {
+
+}
 
 export default {
   module,
