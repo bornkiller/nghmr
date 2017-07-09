@@ -4,6 +4,7 @@
  */
 
 import { CocoModule } from './coco-module';
+import { createInjector } from './coco-injector';
 
 const InnerModules = Reflect.construct(Map, []);
 
@@ -40,8 +41,32 @@ function module(name, requires, configFn) {
 /**
  * @description - angular.bootstrap replacement
  */
-function bootstrap(element, modules, config) {
+function bootstrap(element, modules) {
+  let target = jqLite(element);
 
+  if (target.injector()) {
+    throw new Error('App already bootstrapped with the element');
+  }
+
+  modules = modules || [];
+  modules.unshift(['$provide', function ($provide) {
+    $provide.value('$rootElement', element);
+  }]);
+
+  modules.unshift('ng');
+
+  let injector = createInjector(modules);
+
+  injector.invoke(['$rootScope', '$rootElement', '$compile', '$injector',
+    function bootstrapApply($scope, $element, $compile, $injector) {
+      $scope.$apply(function() {
+        $element.data('$injector', $injector);
+        $compile(element)($scope);
+      });
+    }]
+  );
+
+  return injector;
 }
 
 export default {

@@ -59,3 +59,4 @@ export class InstanceInjector extends CoreInjector{
   }
 }
 
+export function createInjector(modules) {}

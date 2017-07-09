@@ -1,0 +1,17 @@
+{
+  "name": "@nghmr/showcase",
+  "version": "0.1.0",
+  "description": "nghmr showcase.",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "nghmr"
+  ],
+  "author": "huang.jian <hjj491229492@hotmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@nghmr/core": "^0.1.0"
+  }
+}

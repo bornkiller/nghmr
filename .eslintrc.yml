@@ -13,6 +13,8 @@ env:
   jest: true
 extends:
   - 'eslint:recommended'
+globals:
+  jqLite: true
 rules:
   indent:
     - error
