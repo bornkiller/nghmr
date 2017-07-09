@@ -12,13 +12,22 @@
   "env": {
     "prod": {
       "plugins": [
-        "transform-class-properties"
+        "transform-class-properties",
+        ["shaking-import",  {
+          "libraryName": "lodash-es",
+          "libraryDirectory": "."
+        }]
       ]
     },
     "test": {
       "plugins": [
         "transform-es2015-modules-commonjs",
-        "transform-class-properties "
+        "transform-class-properties",
+        ["shaking-import",  {
+          "libraryName": "lodash-es",
+          "libraryOverride": "lodash",
+          "libraryDirectory": "."
+        }]
       ]
     }
   }
